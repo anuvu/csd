@@ -112,7 +112,7 @@ func decodeFloat(src *bufio.Reader) (float64, int) {
 			n += uint32(pb[i])
 		}
 		val := math.Float32frombits(n)
-		return float64(val), 4
+		return val, 4
 	case additionalTypeFloat64:
 		pb := readNBytes(src, 8)
 		switch string(pb) {
